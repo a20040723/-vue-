@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <rect width="100%" height="100%" fill="#071024"/>
+  <g stroke="#ffb86b" stroke-width="6" fill="none">
+    <path d="M40 240 Q140 80 240 240 T440 240 T640 240" />
+  </g>
+  <text x="50%" y="320" font-size="20" fill="#94a3b8" text-anchor="middle">节拍之地</text>
+</svg>

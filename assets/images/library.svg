@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <rect width="100%" height="100%" fill="#0f1724"/>
+  <g fill="#cbd5e1">
+    <rect x="70" y="60" width="120" height="200" rx="6"/>
+    <rect x="210" y="60" width="120" height="200" rx="6"/>
+    <rect x="350" y="60" width="120" height="200" rx="6"/>
+  </g>
+  <text x="50%" y="320" font-size="20" fill="#94a3b8" text-anchor="middle">古老图书馆</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <rect width="100%" height="100%" fill="#081025"/>
+  <g fill="#9be7ff" opacity="0.9">
+    <ellipse cx="320" cy="150" rx="120" ry="70"/>
+    <circle cx="270" cy="140" r="10"/>
+    <circle cx="360" cy="150" r="8"/>
+  </g>
+  <text x="50%" y="320" font-size="20" fill="#94a3b8" text-anchor="middle">大脑植入物</text>
+</svg>

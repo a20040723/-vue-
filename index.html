@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>异步寻宝（增强版）</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>异步寻宝（增强版）</h1>
+        <div class="progress-widget">
+          <div class="count">已发现: <span id="found-count">0</span>/<span id="total-count">0</span></div>
+          <div class="progress"><div id="progress-bar"></div></div>
+        </div>
+        <div class="controls">
+          <label>音量 <input id="volume" type="range" min="0" max="1" step="0.01" /></label>
+          <div id="challenge-energy" class="challenge-energy" aria-live="polite" title="完成挑战小游戏可获得挑战能量">挑战能量：0</div>
+          <button id="reset">重置进度</button>
+        </div>
+      </header>
+
+      <main>
+        <section id="panorama" class="page">
+          <div class="hero">
+            <div class="hero-inner">
+              <h2>全景地图</h2>
+              <p>探索各个地点，听音乐，寻找传说中的宝藏。</p>
+              <div class="search-controls">
+                <input id="search" placeholder="搜索地点或描述..." />
+                <select id="filter">
+                  <option value="all">全部</option>
+                  <option value="found">已发现</option>
+                  <option value="not-found">未探索</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <p class="note">提示：若浏览器阻止自动播放，请先点击页面任意位置或按下某个场景以启动音乐。</p>
+          <div class="locations grid" id="locations"></div>
+        </section>
+
+        <section id="scene" class="page hidden">
+          <button id="back">返回全景</button>
+            <div class="scene-hero">
+                <div class="panorama" id="panorama-view">
+                  <div class="panorama-inner" id="panorama-inner"></div>
+                  <div id="mini-map" class="mini-map" aria-hidden="false"></div>
+                </div>
+                <div class="scene-meta">
+                  <!-- Scene image / visual fallback -->
+                  <div class="scene-preview">
+                    <img id="scene-img" src="" alt="场景缩略图" />
+                  </div>
+                  <h2 id="scene-title"></h2>
+                  <div class="badge" id="found-badge">未发现</div>
+                  <p id="scene-desc"></p>
+                  <div class="narrative" id="narrative">这里是场景旁白，描述场景氛围与提示。</div>
+                </div>
+              </div>
+          <div class="scene-actions">
+            <button id="find">探索/找寻宝藏</button>
+            <button id="use-energy" class="secondary" disabled>使用挑战能量提示</button>
+            <button id="prev-scene" class="nav-btn" style="display: none;">上一站</button>
+            <button id="next-scene" class="nav-btn" style="display: none;">下一站</button>
+          </div>
+        </section>
+      </main>
+
+      <audio id="bg-audio" loop></audio>
+    </div>
+
+    <!-- Vue 重构挂载点（非破坏性的增强） -->
+    <div id="vue-root" aria-hidden="false"></div>
+
+    
+
+    <script src="treasure.js"></script>
+    <script src="app.js"></script>
+  <!-- Vue 3 CDN (full build with template compiler) -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Vue 重构入口（新增，不覆盖原有脚本） -->
+    <script src="vue-app.js"></script>
+  </body>
+</html>
